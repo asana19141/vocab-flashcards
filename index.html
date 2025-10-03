@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>單字記憶卡</title>
+  <title>Word Bank</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>單字記憶卡</h1>
+  <h1>🧑‍🏫</h1>
   <div class="center">
+    <label for="target-language">Language</label>
+    <select id="target-language">
+      <option value="日文">日文</option>
+      <option value="中文">中文</option>
+      <option value="英文">英文</option>
+    </select>
+
+    <label for="category-select">Category</label>
     <select id="category-select">
       <option value="全部">全部</option>
     </select>
+
     <div id="card" class="card">載入中...</div>
-    <button id="next-btn">下一張</button>
+    <button id="next-btn">Next</button>
   </div>
   <script src="script.js"></script>
 </body>
