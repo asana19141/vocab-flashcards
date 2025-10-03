@@ -23,7 +23,7 @@ h1 {
 
 label {
   font-size: 4vw;
-  margin: 10px 0 5px;
+  margin:10px 0px;
 }
 
 select {
@@ -46,6 +46,7 @@ select {
   background-color: #e0f7fa;
   border: 2px solid #00796b;
   border-radius: 12px;
+  font-weight: bold;
   font-size: 5vw;
   display: flex;
   flex-direction: column;
