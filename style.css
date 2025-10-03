@@ -40,7 +40,7 @@ select {
 .card {
   width: 70%;
   max-width: 360px;
-  min-height: 160px;
+  min-height: 256px;
   margin-top: 24px;
   padding: 20px;
   background-color: #e0f7fa;
@@ -59,6 +59,12 @@ select {
 
 .card:active {
   background-color: #b2ebf2;
+}
+
+.card .pronunciation {
+  font-size: 4.5vw;
+  color: #444;
+  margin-bottom: 8px;
 }
 
 .card .meaning {
@@ -104,6 +110,10 @@ button:hover {
 
   .card {
     font-size: 40px;
+  }
+
+  .card .pronunciation {
+  font-size: 32px;
   }
 
   .card .meaning {
