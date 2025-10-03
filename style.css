@@ -1,71 +1,117 @@
+/* 基本排版與背景 */
 body {
-  font-family: sans-serif;
-  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
   background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
 }
 
+/* 響應式視窗設定 */
+html {
+  scroll-behavior: smooth;
+}
+
+head meta[name="viewport"] {
+  content: "width=device-width, initial-scale=1.0";
+}
+
+/* 標題 */
 h1 {
-  margin-top: 300px;
+  margin-top: 256px;
+  font-size: 6vw;
   color: #00796b;
 }
 
+/* 中央區塊排版 */
 .center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
+  padding: 0 5vw;
+  margin-top: 5vh;
 }
 
+/* 分類選單 */
 select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 4.5vw;
+  border-radius: 8px;
+  border: 1px solid #ccc;
   margin-bottom: 20px;
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 6px;
 }
 
+/* 單字卡片 */
 .card {
-  width: 280px;
-  min-height: 160px;
-  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 200px;
   padding: 20px;
   background-color: #e0f7fa;
-  border: 2px solid #00796b;
+  border: 3px solid #00796b;
   border-radius: 12px;
-  font-size: 24px;
+  font-size: 6vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.card:hover {
+.card:active {
   background-color: #b2ebf2;
 }
 
+/* 語意與例句分層 */
 .card .meaning {
   font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 5vw;
+  margin-bottom: 12px;
 }
 
 .card .example {
-  font-size: 16px;
-  color: #333;
+  font-size: 4vw;
+  color: #555;
   line-height: 1.4;
   text-align: center;
 }
 
+/* 按鈕樣式 */
 button {
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 12px 24px;
+  font-size: 4.5vw;
   background-color: #00796b;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
   background-color: #004d40;
+}
+
+/* 深色模式支援（可選） */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #eee;
+  }
+  .card {
+    background-color: #1e1e1e;
+    border-color: #4caf50;
+  }
+  button {
+    background-color: #4caf50;
+  }
+  button:hover {
+    background-color: #388e3c;
+  }
 }
