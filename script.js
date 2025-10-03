@@ -9,7 +9,7 @@ let vocabList = [];
 let filteredList = [];
 let currentIndex = 0;
 let showingMeaning = false;
-let selectedLanguage = '日文'; // 預設語言
+let selectedLanguage = '日文';
 
 loadSheet(selectedLanguage);
 
@@ -45,9 +45,12 @@ function loadSheet(language) {
 
 function populateCategories() {
   const select = document.getElementById('category-select');
-  const categories = ['全部', ...new Set(vocabList.map(item => item.category))];
+  const allCategories = vocabList.flatMap(item =>
+    item.category.split(',').map(c => c.trim())
+  );
+  const uniqueCategories = ['全部', ...new Set(allCategories)];
   select.innerHTML = '';
-  categories.forEach(cat => {
+  uniqueCategories.forEach(cat => {
     const option = document.createElement('option');
     option.value = cat;
     option.textContent = cat;
@@ -59,10 +62,11 @@ function populateCategories() {
 }
 
 function filterByCategory(category) {
-  const list = category === '全部'
-    ? vocabList
-    : vocabList.filter(item => item.category === category);
-  filteredList = shuffleArray(list);
+  filteredList = vocabList.filter(item => {
+    const categories = item.category.split(',').map(c => c.trim());
+    return category === '全部' || categories.includes(category);
+  });
+  filteredList = shuffleArray(filteredList);
   currentIndex = 0;
   showingMeaning = false;
   showCard();
