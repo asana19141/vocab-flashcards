@@ -40,7 +40,7 @@ select {
 .card {
   width: 70%;
   max-width: 360px;
-  min-height: 256px;
+  min-height: 196px;
   margin-top: 24px;
   padding: 20px;
   background-color: #e0f7fa;
