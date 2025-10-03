@@ -77,9 +77,9 @@ function showCard() {
   const item = filteredList[currentIndex];
   if (showingMeaning) {
     card.innerHTML = `
-      <div class="pronunciation"><small></small><br>${item.pronunciation}</div>
+      <div class="pronunciation"><small></small>${item.pronunciation}</div>
       <div class="meaning">${item.meaning}</div>
-      <div class="example"><small></small><br>${item.example}</div>
+      <div class="example"><small></small>${item.example}</div>
     `;
   } else {
     card.textContent = item.word;
